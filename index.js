@@ -12,5 +12,20 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map((line) => {
+    const tokens = line.split(" ");
+    const capitalizedTokens = tokens.map(
+      (token) => token.charAt(0).toUpperCase() + token.slice(1)
+    );
+    const response = capitalizedTokens.join(" ");
+    return response;
+  });
+};
+
+// How can we "iterate" through individual words in a string?
+// Can we execute an iteration inside an iteration? How?
+// How can we capitalize just the first letter in a word?
+
+// titleCased(): returns an array with title case tutorial names. Note that this function takes no arguments and should use the global tutorials variable as data.
+// NOTE: This lab is challenging! You will need to iterate through the tutorials array, modifying the name of each tutorial. To do this, you will also need to access and modify each individual word.
+
